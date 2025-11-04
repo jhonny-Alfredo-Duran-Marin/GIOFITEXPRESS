@@ -12,14 +12,14 @@ class AntecedentesController extends Controller
     public function index()
     {
         $antecedentes = Antecedente::with(['cliente', 'nutricionista'])->latest()->get();
-        return view('antecedentes.index', compact('antecedentes'));
+        return view('seguimiento.antecedentes.index', compact('antecedentes'));
     }
 
     public function create()
     {
         $clientes = Persona::where('tipo', 'CLIENTE')->get();
         $nutricionistas = Persona::where('tipo', 'NUTRICIONISTA')->get();
-        return view('antecedentes.create', compact('clientes', 'nutricionistas'));
+        return view('seguimiento.antecedentes.create', compact('clientes', 'nutricionistas'));
     }
 
     public function store(Request $request)
@@ -47,7 +47,7 @@ class AntecedentesController extends Controller
     {
         $clientes = Persona::where('tipo', 'CLIENTE')->get();
         $nutricionistas = Persona::where('tipo', 'NUTRICIONISTA')->get();
-        return view('antecedentes.edit', compact('antecedente', 'clientes', 'nutricionistas'));
+        return view('seguimiento.antecedentes.edit', compact('antecedente', 'clientes', 'nutricionistas'));
     }
 
     public function update(Request $request, Antecedente $antecedente)

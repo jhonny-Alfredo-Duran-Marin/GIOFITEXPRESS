@@ -37,7 +37,8 @@ class PromocionController extends Controller
 
     public function edit(Promocion $promocione)
     {
-        return view('administracion.promocion.edit', ['promocion' => $promocione]);
+        return view('a
+        dministracion.promocion.edit', ['promocion' => $promocione]);
     }
 
     public function update(Request $request, Promocion $promocione)
